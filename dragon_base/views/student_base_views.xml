@@ -1,60 +1,60 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="dragon_base.list">
-      <field name="name">dragon_base list</field>
-      <field name="model">dragon_base.dragon_base</field>
+
+    <record model="ir.ui.view" id="student_base_tree_view">
+      <field name="name">student.base.tree.view</field>
+      <field name="model">student.base</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="matricule"/>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="lastname"/>
+          <field name="birth_date"/>
+          <field name="age"/>
         </tree>
       </field>
     </record>
--->
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="dragon_base.action_window">
-      <field name="name">dragon_base window</field>
-      <field name="res_model">dragon_base.dragon_base</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="dragon_base.action_server">
-      <field name="name">dragon_base server</field>
-      <field name="model_id" ref="model_dragon_base_dragon_base"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
+    <record model="ir.ui.view" id="student_base_form_view">
+      <field name="name">student.base.form.view</field>
+      <field name="model">student.base</field>
+      <field name="arch" type="xml">
+        <form string="student_base_form">
+          <sheet>
+            <group>
+              <group>
+                <field name="matricule"/>
+                <field name="name"/>
+                <field name="lastname"/>
+                <field name="birth_date"/>
+              </group>
+              <group>
+                <field name="photo" widget="image"/>
+                <field name="age"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
--->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="student_base_action">
+      <field name="name">Student</field>
+      <field name="res_model">student.base</field>
+      <field name="view_mode">tree,form</field>
+    </record>
 
     <!-- Top menu item -->
-<!--
-    <menuitem name="dragon_base" id="dragon_base.menu_root"/>
--->
+    <menuitem name="Dragon project" id="student_base_root"/>
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="dragon_base.menu_1" parent="dragon_base.menu_root"/>
-    <menuitem name="Menu 2" id="dragon_base.menu_2" parent="dragon_base.menu_root"/>
--->
+    <menuitem name="Student" id="student_base_menu" parent="student_base_root"/>
+
     <!-- actions -->
-<!--
-    <menuitem name="List" id="dragon_base.menu_1_list" parent="dragon_base.menu_1"
-              action="dragon_base.action_window"/>
-    <menuitem name="Server to list" id="dragon_base" parent="dragon_base.menu_2"
-              action="dragon_base.action_server"/>
--->
+    <menuitem name="Student" id="student_base_menu_list" parent="student_base_menu" action="student_base_action"/>
+
   </data>
 </odoo>

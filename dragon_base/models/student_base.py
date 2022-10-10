@@ -1,18 +1,15 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields
 
 
-class dragon_base(models.Model):
-    _name = 'dragon_base.dragon_base'
-    _description = 'dragon_base.dragon_base'
+class StudentBase(models.Model):
+    _name = 'student.base'
+    _description = "Student's table"
 
-    name = fields.Char()
-    value = fields.Integer()
-    value2 = fields.Float(compute="_value_pc", store=True)
-    description = fields.Text()
-
-    @api.depends('value')
-    def _value_pc(self):
-        for record in self:
-            record.value2 = float(record.value) / 100
+    name = fields.Char(string="Name")
+    lastname = fields.Char(string="Last name")
+    birth_date = fields.Date(string="Birth date")
+    age = fields.Integer(string="Age")
+    matricule = fields.Char(string="Matricule")
+    photo = fields.Image(string="Photo")
