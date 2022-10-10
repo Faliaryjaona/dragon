@@ -3,6 +3,7 @@ from odoo import api, fields, models
 class ProfessorBase(models.Model):
     _inherit = 'res.partner'
 
-    tif = fields.Char(string='TIF')
-    stat = fields.Char(string='STAT')
-    rcs = fields.Char(string='RCS')
+     # Add news fields
+    nif = fields.Date(string='NIF')
+    stat = fields.Date(string='STAT')
+    rcs = fields.Date(string='RCS')

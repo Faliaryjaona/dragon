@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        
+        <!-- Inherit List View to Modify it -->
         <record id="professor_base_list_view" model="ir.ui.view">
             <field name="name">professor.base.list.view</field>
             <field name="model">res.partner</field>
@@ -9,7 +9,7 @@
             <field name="arch" type="xml">
 
                 <xpath expr="//field[@name='email']" position="after" >
-                    <field name="tif"/>
+                    <field name="nif"/>
                     <field name="stat"/>
                     <field name="rcs"/>
                 </xpath>
@@ -17,28 +17,28 @@
             </field>
         </record>
 
-<!--        &lt;!&ndash; Inherit Form View to Modify it &ndash;&gt;-->
-<!--        <record id="professor_base_form_view" model="ir.ui.view">-->
-<!--            <field name="name">professor.base.form.view</field>-->
-<!--            <field name="model">res.partner</field>-->
-<!--            <field name="inherit_id" ref=""/>-->
-<!--            <field name="arch" type="xml">-->
+        <!-- Inherit Form View to Modify it -->
+        <record id="professor_base_form_view" model="ir.ui.view">
+            <field name="name">professor.base.form.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
 
-<!--                <xpath expr="//field[@name='']" position="after">-->
-<!--                    &lt;!&ndash; Add your fields or attributes here &ndash;&gt;-->
-<!--                    <field name="tif" required='True'/>-->
-<!--                    <field name="stat" />-->
-<!--                    <field name="rcs"/>-->
-<!--                </xpath>-->
+                <xpath expr="//field[@name='vat']" position="after">
+                    <!-- Add your fields or attributes here -->
+                    <field name="nif" required='True'/>
+                    <field name="stat" required='True' />
+                    <field name="rcs" required='True'/>
+                </xpath>
 
-<!--            </field>-->
-<!--        </record>-->
+            </field>
+        </record>
 
         <record id="res_partner_action" model="ir.actions.act_window">
             <field name="name">Professor</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">res.partner</field>
-            <field name="view_mode">tree</field>
+            <field name="view_mode">tree,form</field>
         </record>
 
         <!-- actions -->
