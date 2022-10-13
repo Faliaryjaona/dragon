@@ -13,4 +13,4 @@ class StudentBase(models.Model):
     age = fields.Integer(string="Age")
     matricule = fields.Char(string="Matricule")
     photo = fields.Image(string="Photo")
-    cin = fields.Char(string="CIN")
+    cin = fields.Char(string="Cin")

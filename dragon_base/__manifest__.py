@@ -31,6 +31,7 @@
         'views/student_base_views.xml',
         'views/student_class_views.xml',
         'views/res_partner_views.xml',
+        'views/cours_base_views.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode
