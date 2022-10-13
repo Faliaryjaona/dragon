@@ -7,9 +7,9 @@
       <field name="model">student.class</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="class_number"/>
-          <field name="stage"/>
+          <field name="name" optional="show"/>
+          <field name="class_number" optional="show"/>
+          <field name="stage" optional="show"/>
         </tree>
       </field>
     </record>

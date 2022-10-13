@@ -7,11 +7,12 @@
       <field name="model">student.base</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="matricule"/>
-          <field name="name"/>
-          <field name="lastname"/>
-          <field name="birth_date"/>
-          <field name="age"/>
+          <field name="matricule" optional="show"/>
+          <field name="name" optional="show"/>
+          <field name="lastname" optional="show"/>
+          <field name="birth_date" optional="show"/>
+          <field name="age" optional="show"/>
+          <field name="cin" optional="show"/>
         </tree>
       </field>
     </record>
@@ -32,6 +33,7 @@
               <group>
                 <field name="photo" widget="image"/>
                 <field name="age"/>
+                <field name="cin"/>
               </group>
             </group>
           </sheet>
